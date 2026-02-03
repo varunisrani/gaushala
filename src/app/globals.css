@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #fff3da;
+  --paper-strong: #ffe3b3;
+  --saffron: #f7a23b;
+  --clay: #c5522f;
+  --brick: #9c3d25;
+  --ink: #2b1a12;
+  --leaf: #3f6b45;
+  --shadow: rgba(43, 26, 18, 0.18);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface-muted: rgba(255, 255, 255, 0.68);
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(600px 400px at 15% 10%, rgba(247, 162, 59, 0.25), transparent 60%),
+    linear-gradient(180deg, rgba(255, 243, 218, 0.98) 0%, rgba(255, 233, 202, 0.9) 45%, rgba(255, 251, 244, 0.95) 100%);
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.section-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 60px -40px var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.bg-surface-strong {
+  background: var(--surface-strong);
+}
+
+.bg-surface-muted {
+  background: var(--surface-muted);
+}
+
+.glow-ring {
+  position: relative;
+}
+
+.glow-ring::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(247, 162, 59, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: fade-up 0.9s ease forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.45s;
+}
+
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
