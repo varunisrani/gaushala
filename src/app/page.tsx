@@ -268,7 +268,7 @@ export default function Home() {
               સરનામું
             </h3>
             <p className="mt-3 text-base leading-relaxed text-[#4c2b20]">
-              ધણેશ્વર મહાદેવ મંદિર,
+              ધોળેશ્વર મહાદેવ મંદિર ની બાજુમાં,
               <br />
               મુ. પો. તા. વિરપુર,
               <br />
